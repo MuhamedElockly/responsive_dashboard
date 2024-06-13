@@ -61,12 +61,7 @@ class Assets {
   /// assets/images/wallet_account.svg
   static const String imagesWalletAccount = "assets/images/wallet_account.svg";
 
-  /// Assets for imagesWalletAccount (1)
-  /// assets/images/wallet_account (1).svg
-  static const String imagesWalletAccount (1) = "assets/images/wallet_account (1).svg";
-
-  /// Assets for imagesWalletAccount (2)
-  /// assets/images/wallet_account (2).svg
-  static const String imagesWalletAccount (2) = "assets/images/wallet_account (2).svg";
+ 
+ 
 }
 
