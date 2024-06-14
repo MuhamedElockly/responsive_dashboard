@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashboard/models/all_expensess_item_model.dart';
 import 'package:responsive_dashboard/utils/app_images.dart';
+import 'package:responsive_dashboard/utils/app_styles.dart';
 import 'package:responsive_dashboard/widgets/all_expensess_item_header.dart';
 
 class AllExpensessItem extends StatelessWidget {
+  final AllExpensessItemModel itemModel;
+
+  const AllExpensessItem({super.key, required this.itemModel});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +23,17 @@ class AllExpensessItem extends StatelessWidget {
         ),
       ),
       child: Column(
-        children: [AllExpensessItemHeader(image: Assets.c)],
+        children: [
+          AllExpensessItemHeader(image: itemModel.image),
+          SizedBox(
+            height: 34,
+          ),
+          Text(
+            
+            itemModel.tittle,
+            style: AppStyles.styleSemiBold16(context),
+          ),
+        ],
       ),
     );
   }
