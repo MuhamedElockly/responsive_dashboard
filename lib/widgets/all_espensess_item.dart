@@ -23,15 +23,29 @@ class AllExpensessItem extends StatelessWidget {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AllExpensessItemHeader(image: itemModel.image),
           SizedBox(
             height: 34,
           ),
           Text(
-            
             itemModel.tittle,
-            style: AppStyles.styleSemiBold16(context),
+            style: AppStyles.styleMedium16(context),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Text(
+            itemModel.date,
+            style: AppStyles.styleRegular14(context),
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          Text(
+            itemModel.price,
+            style: AppStyles.styleSemiBold24(context),
           ),
         ],
       ),
