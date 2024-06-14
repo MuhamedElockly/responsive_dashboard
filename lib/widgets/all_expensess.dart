@@ -19,12 +19,14 @@ class AllExpensess extends StatelessWidget {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Expanded(child: AllExpensessHeader()),
+          AllExpensessHeader(),
           SizedBox(
             height: 16,
           ),
-          Expanded(child: AllExpensessBody())
+          AllExpensessBody()
         ],
       ),
     );

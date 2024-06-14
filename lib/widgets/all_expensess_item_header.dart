@@ -4,8 +4,9 @@ import 'package:svg_flutter/svg.dart';
 
 class AllExpensessItemHeader extends StatelessWidget {
   final String image;
-
-  const AllExpensessItemHeader({super.key, required this.image});
+  final Color? imageColor, imageBackground;
+  const AllExpensessItemHeader(
+      {super.key, required this.image, this.imageColor, this.imageBackground});
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,9 +14,16 @@ class AllExpensessItemHeader extends StatelessWidget {
         Container(
           width: 60,
           height: 60,
-          decoration:
-              ShapeDecoration(color: Color(0xFFFAFAFA), shape: OvalBorder()),
-          child: Center(child: SvgPicture.asset(image)),
+          decoration: ShapeDecoration(
+            color: imageBackground ?? Colors.white,
+            shape: OvalBorder(),
+          ),
+          child: Center(
+              child: SvgPicture.asset(
+            image,
+            colorFilter: ColorFilter.mode(
+                imageColor ?? Color(0xFF4EB7F2), BlendMode.srcIn),
+          )),
         ),
         Expanded(child: SizedBox()),
         RotatedBox(

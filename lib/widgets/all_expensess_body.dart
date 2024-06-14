@@ -7,37 +7,46 @@ class AllExpensessBody extends StatelessWidget {
   AllExpensessBody({
     super.key,
   });
-  List<AllExpensessItem> list = [
-    AllExpensessItem(
-      itemModel: AllExpensessItemModel(
-          image: Assets.imagesIncome,
-          tittle: 'Balance',
-          date: 'Junue 2024',
-          price: r'$20.24'),
-    ),
-    AllExpensessItem(
-      itemModel: AllExpensessItemModel(
-          image: Assets.imagesIncome,
-          tittle: 'Income',
-          date: 'Junue 2024',
-          price: r'$20.24'),
-    ),
-    AllExpensessItem(
-      itemModel: AllExpensessItemModel(
-          image: Assets.imagesIncome,
-          tittle: 'Expensess',
-          date: 'Junue 2024',
-          price: r'$20.24'),
-    ),
+  List<AllExpensessItemModel> list = [
+    AllExpensessItemModel(
+        image: Assets.imagesBalance,
+        tittle: 'Balance',
+        date: 'Junue 2024',
+        price: r'$20.24'),
+    AllExpensessItemModel(
+        image: Assets.imagesIncome,
+        tittle: 'Income',
+        date: 'Junue 2024',
+        price: r'$20.24'),
+    AllExpensessItemModel(
+        image: Assets.imagesExpenses,
+        tittle: 'Expensess',
+        date: 'Junue 2024',
+        price: r'$20.24'),
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: list.length,
-      itemBuilder: (context, index) {
-        return Expanded(child: list[index]);
-      },
-    );
+    return Row(
+        children: list.asMap().entries.map((e) {
+      int index = e.key;
+      var item = e.value;
+      if (index == 1) {
+        return Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: AllExpensessItem(
+              itemModel: item,
+              isSelected: false,
+            ),
+          ),
+        );
+      } else {
+        return Expanded(
+            child: AllExpensessItem(
+          itemModel: item,
+          isSelected: true,
+        ));
+      }
+    }).toList());
   }
 }
