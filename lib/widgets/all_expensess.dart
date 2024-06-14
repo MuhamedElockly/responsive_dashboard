@@ -6,18 +6,13 @@ import 'package:responsive_dashboard/utils/app_images.dart';
 import 'package:responsive_dashboard/widgets/all_espensess_item.dart';
 import 'package:responsive_dashboard/widgets/all_expensess_body.dart';
 import 'package:responsive_dashboard/widgets/all_expensess_header.dart';
+import 'package:responsive_dashboard/widgets/custom_background_container.dart';
 
 class AllExpensess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
+    return CustomBockgroundContainer(
+      padding: 20,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

@@ -15,11 +15,11 @@ class AllExpensessItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (isSelected) {
-      return AllExpensessItemNotSelected(itemModel: itemModel);
-    } else {
       return AllExpensessItemSelected(
         itemModel: itemModel,
       );
+    } else {
+      return AllExpensessItemNotSelected(itemModel: itemModel);
     }
   }
 }

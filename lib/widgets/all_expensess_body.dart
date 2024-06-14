@@ -3,10 +3,16 @@ import 'package:responsive_dashboard/models/all_expensess_item_model.dart';
 import 'package:responsive_dashboard/utils/app_images.dart';
 import 'package:responsive_dashboard/widgets/all_espensess_item.dart';
 
-class AllExpensessBody extends StatelessWidget {
+class AllExpensessBody extends StatefulWidget {
   AllExpensessBody({
     super.key,
   });
+
+  @override
+  State<AllExpensessBody> createState() => _AllExpensessBodyState();
+}
+
+class _AllExpensessBodyState extends State<AllExpensessBody> {
   List<AllExpensessItemModel> list = [
     AllExpensessItemModel(
         image: Assets.imagesBalance,
@@ -24,6 +30,9 @@ class AllExpensessBody extends StatelessWidget {
         date: 'Junue 2024',
         price: r'$20.24'),
   ];
+
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -32,20 +41,33 @@ class AllExpensessBody extends StatelessWidget {
       var item = e.value;
       if (index == 1) {
         return Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: AllExpensessItem(
-              itemModel: item,
-              isSelected: false,
+          child: GestureDetector(
+            onTap: () {
+              selectedIndex = index;
+              setState(() {});
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: AllExpensessItem(
+                itemModel: item,
+                isSelected: selectedIndex == index,
+              ),
             ),
           ),
         );
       } else {
         return Expanded(
+          child: GestureDetector(
+            onTap: () {
+              selectedIndex = index;
+              setState(() {});
+            },
             child: AllExpensessItem(
-          itemModel: item,
-          isSelected: true,
-        ));
+              itemModel: item,
+              isSelected: selectedIndex == index,
+            ),
+          ),
+        );
       }
     }).toList());
   }
