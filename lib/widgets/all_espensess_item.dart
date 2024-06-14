@@ -7,13 +7,16 @@ import 'package:responsive_dashboard/widgets/all_expensess_item_header.dart';
 class AllExpensessItem extends StatelessWidget {
   final AllExpensessItemModel itemModel;
 
-  const AllExpensessItem({super.key, required this.itemModel});
+  const AllExpensessItem(
+      {super.key,  required this.itemModel});
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: ShapeDecoration(
-        color: Colors.white,
+    
         shape: RoundedRectangleBorder(
           side: BorderSide(
             width: 1,
