@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:responsive_dashboard/widgets/all_expensess.dart';
 import 'package:responsive_dashboard/widgets/custom_drawer.dart';
+import 'package:responsive_dashboard/widgets/quick_invoice.dart';
 
 class DesktopLayout extends StatelessWidget {
   @override
@@ -21,6 +23,7 @@ class DesktopLayout extends StatelessWidget {
               Expanded(
                 child: AllExpensess(),
               ),
+              Expanded(child: QuickInvoice()),
             ],
           ),
         ),
