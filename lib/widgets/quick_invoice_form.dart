@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:responsive_dashboard/widgets/custom_botton.dart';
 import 'package:responsive_dashboard/widgets/tittled_text_feild.dart';
 
 class QuickInvoiceForm extends StatelessWidget {
@@ -25,14 +27,11 @@ class QuickInvoiceForm extends StatelessWidget {
         ),
         Row(
           children: [
-            Expanded(
-              child: TittledTextFeild(tittle: 'Item Name', hint: 'Item Name'),
-            ),
+            Expanded(child: CustomButton()),
             SizedBox(
-              width: 16,
+              width: 12,
             ),
-            Expanded(
-                child: TittledTextFeild(tittle: 'Item Amount', hint: 'USD')),
+            Expanded(child: CustomButton()),
           ],
         )
       ],
