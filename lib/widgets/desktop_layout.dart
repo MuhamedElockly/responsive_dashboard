@@ -22,6 +22,9 @@ class DesktopLayout extends StatelessWidget {
           flex: 2,
           child: MediumSection(),
         ),
+        SizedBox(
+          width: 24,
+        ),
         Expanded(
           flex: 1,
           child: Column(
