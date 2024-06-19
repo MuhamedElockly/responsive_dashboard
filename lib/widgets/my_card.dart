@@ -44,6 +44,7 @@ class MyCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
+                    
                     '894 654 487 2457',
                     style: AppStyles.styleSemiBold24(context)
                         .copyWith(color: Colors.white),
