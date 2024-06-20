@@ -10,6 +10,7 @@ import 'package:responsive_dashboard/widgets/my_card.dart';
 import 'package:responsive_dashboard/widgets/my_card_section.dart';
 import 'package:responsive_dashboard/widgets/my_cards_page_view.dart';
 import 'package:responsive_dashboard/widgets/quick_invoice.dart';
+import 'package:responsive_dashboard/widgets/transaction_history.dart';
 
 class DesktopLayout extends StatelessWidget {
   @override
@@ -33,7 +34,7 @@ class DesktopLayout extends StatelessWidget {
           flex: 1,
           child: Column(
             children: [
-              MyCardSection(),
+              TransactionHistory(),
             ],
           ),
         ),
