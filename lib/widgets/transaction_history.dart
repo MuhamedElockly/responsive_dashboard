@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
+import 'package:responsive_dashboard/widgets/transaction_history_list_view.dart';
 
 class TransactionHistory extends StatelessWidget {
   @override
@@ -20,7 +21,11 @@ class TransactionHistory extends StatelessWidget {
                   .copyWith(color: Color(0xff4EB7F2)),
             ),
           ],
-        )
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        TransactionHistoryListView(),
       ],
     );
   }
