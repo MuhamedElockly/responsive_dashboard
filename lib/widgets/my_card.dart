@@ -13,6 +13,7 @@ class MyCard extends StatelessWidget {
       child: Container(
         decoration: ShapeDecoration(
           image: DecorationImage(
+            fit: BoxFit.fill,
             image: AssetImage(Assets.imagesCardBackground),
           ),
           color: Color(0xff4EB7F2),
@@ -44,7 +45,6 @@ class MyCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    
                     '894 654 487 2457',
                     style: AppStyles.styleSemiBold24(context)
                         .copyWith(color: Colors.white),
