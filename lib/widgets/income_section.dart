@@ -21,6 +21,7 @@ class IncomeSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Expanded(child: IncomeChart()),
+              
             ],
           ),
         )
