@@ -12,12 +12,9 @@ class FinanceSection extends StatelessWidget {
       child: CustomBockgroundContainer(
         child: Column(
           children: [
-            SizedBox(
-              height: 10,
-            ),
             MyCardSection(),
             Divider(
-              height: 40,
+              height: 20,
               color: Color(0xffF1F1F1),
             ),
             TransactionHistory(),

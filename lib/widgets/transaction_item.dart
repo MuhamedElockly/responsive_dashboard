@@ -18,6 +18,7 @@ class TransactionItem extends StatelessWidget {
       child: ListTile(
         title: Text(
           transactionModel.tittle,
+          maxLines: 1,
           style: AppStyles.styleSemiBold16(context),
         ),
         subtitle: Text(

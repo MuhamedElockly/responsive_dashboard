@@ -31,13 +31,13 @@ class _MyCardSectionState extends State<MyCardSection> {
           style: AppStyles.styleSemiBold20(context),
         ),
         SizedBox(
-          height: 20,
+          height: 10,
         ),
         MyCardPageView(
           pageController: pageController,
         ),
         SizedBox(
-          height: 20,
+          height: 10,
         ),
         DotsIndicator(
           currentIndex: currentPage,
