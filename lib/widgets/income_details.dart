@@ -1,19 +1,32 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_dashboard/models/item_detail_model.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
 class IncomeDetails extends StatelessWidget {
+  static const items = [
+    ItemDetailModel(
+        color: Color(0xff208BCD), tittle: 'Design Service', value: '20%'),
+    ItemDetailModel(
+        color: Color(0xff4DB7F2), tittle: 'Design Product', value: '40%'),
+    ItemDetailModel(
+        color: Color(0xff064060), tittle: 'Product Royality', value: '20%'),
+    ItemDetailModel(color: Color(0xffE2EDCD), tittle: 'Others', value: '20%'),
+  ];
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return IncomeItem(itemDetailModel: items[index]);
+      },
+    );
   }
 }
 
 class IncomeItem extends StatelessWidget {
-  final Color color;
-
-  const IncomeItem({super.key, required this.color});
+  final ItemDetailModel itemDetailModel;
+  const IncomeItem({super.key, required this.itemDetailModel});
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -21,16 +34,16 @@ class IncomeItem extends StatelessWidget {
         width: 12,
         height: 12,
         decoration: ShapeDecoration(
-          color: color,
+          color: itemDetailModel.color,
           shape: OvalBorder(),
         ),
       ),
       title: Text(
-        'Design Service',
+        itemDetailModel.tittle,
         style: AppStyles.styleRegular16(context),
       ),
       trailing: Text(
-        '40',
+        itemDetailModel.value,
         style: AppStyles.styleMedium16(context),
       ),
     );

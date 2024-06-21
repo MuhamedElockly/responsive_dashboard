@@ -37,6 +37,9 @@ class DesktopLayout extends StatelessWidget {
           child: Column(
             children: [
               FinanceSection(),
+              SizedBox(
+                height: 5,
+              ),
               IncomeSection(),
             ],
           ),
