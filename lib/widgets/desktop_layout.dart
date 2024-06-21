@@ -6,6 +6,7 @@ import 'package:responsive_dashboard/widgets/all_expensess.dart';
 import 'package:responsive_dashboard/widgets/custom_dot_indicator.dart';
 import 'package:responsive_dashboard/widgets/custom_drawer.dart';
 import 'package:responsive_dashboard/widgets/finance_section.dart';
+import 'package:responsive_dashboard/widgets/income_section.dart';
 import 'package:responsive_dashboard/widgets/medium_section.dart';
 import 'package:responsive_dashboard/widgets/my_card.dart';
 import 'package:responsive_dashboard/widgets/my_card_section.dart';
@@ -36,6 +37,7 @@ class DesktopLayout extends StatelessWidget {
           child: Column(
             children: [
               FinanceSection(),
+              IncomeSection(),
             ],
           ),
         ),

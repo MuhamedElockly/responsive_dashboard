@@ -17,7 +17,7 @@ class AllExpensess extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          AllExpensessHeader(),
+          AllExpensessHeader(header: 'All Expensess',),
           SizedBox(
             height: 16,
           ),
