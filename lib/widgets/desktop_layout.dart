@@ -20,7 +20,6 @@ class DesktopLayout extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          
           child: CustomDrawer(),
         ),
         SizedBox(
