@@ -19,6 +19,7 @@ class DesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        
         Expanded(
           child: CustomDrawer(),
         ),
