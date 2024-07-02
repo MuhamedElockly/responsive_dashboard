@@ -8,6 +8,12 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: MediaQuery.of(context).size.width < 800
+          ? AppBar(
+              leading: GestureDetector(onTap: () {}, child: Icon(Icons.menu)),
+              backgroundColor: Color(0xffFAFAFA),
+            )
+          : null,
       backgroundColor: Color(0xFFF7F9F8),
       body: AdaptiveLayout(
         mobileLayout: (context) => MobileLayout(),

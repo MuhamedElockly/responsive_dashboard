@@ -27,7 +27,10 @@ class DesktopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 2,
-          child: MediumSection(),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 12),
+            child: MediumSection(),
+          ),
         ),
         SizedBox(
           width: 18,
