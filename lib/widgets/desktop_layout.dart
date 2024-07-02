@@ -20,37 +20,54 @@ class DesktopLayout extends StatelessWidget {
     return Row(
       children: [
         Expanded(
+          flex: 1,
           child: CustomDrawer(),
         ),
         SizedBox(
           width: 32,
         ),
         Expanded(
-          flex: 2,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 12),
-            child: MediumSection(),
-          ),
+          flex: 3,
+          child: BodySection(),
         ),
-        SizedBox(
-          width: 18,
-        ),
-        Expanded(
-          flex: 1,
-          child: Column(
-            children: [
-              FinanceSection(),
-              SizedBox(
-                height: 5,
-              ),
-              IncomeSection(),
-            ],
-          ),
-        ),
-        SizedBox(
-          width: 8,
-        )
       ],
+    );
+  }
+}
+
+class BodySection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Row(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: MediumSection(),
+            ),
+          ),
+          SizedBox(
+            width: 18,
+          ),
+          Expanded(
+            flex: 1,
+            child: Column(
+              children: [
+                FinanceSection(),
+                SizedBox(
+                  height: 5,
+                ),
+                IncomeSection(),
+              ],
+            ),
+          ),
+          SizedBox(
+            width: 8,
+          )
+        ],
+      ),
     );
   }
 }
