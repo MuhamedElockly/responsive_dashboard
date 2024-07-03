@@ -60,6 +60,9 @@ class BodySection extends StatelessWidget {
                   height: 5,
                 ),
                 IncomeSection(),
+                SizedBox(
+                  height: 12,
+                ),
               ],
             ),
           ),

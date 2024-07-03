@@ -25,7 +25,8 @@ class IncomeSection extends StatelessWidget {
               Expanded(flex: 2, child: IncomeDetails()),
             ],
           ),
-        )
+        ),
+       
       ],
     ));
   }
