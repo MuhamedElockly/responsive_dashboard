@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 abstract class AppStyles {
   static TextStyle styleRegular16(context) {
     return TextStyle(
-      color: const Color(0xFF064060),
-      fontSize: 16,
+      color: Color(0xFF064060),
+      fontSize: getResponsiveFontSize(fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
     );
@@ -15,8 +15,8 @@ abstract class AppStyles {
 
   static TextStyle styleBold16(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF4EB7F2),
-      fontSize: 16,
+      color: Color(0xFF4EB7F2),
+      fontSize: getResponsiveFontSize(fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w700,
     );
@@ -24,8 +24,8 @@ abstract class AppStyles {
 
   static TextStyle styleMedium16(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF064061),
-      fontSize: 16,
+      color: Color(0xFF064061),
+      fontSize: getResponsiveFontSize(fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w500,
     );
@@ -33,8 +33,8 @@ abstract class AppStyles {
 
   static TextStyle styleMedium20(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
-      fontSize: 20,
+      color: Color(0xFFFFFFFF),
+      fontSize: getResponsiveFontSize(fontSize: 20),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w500,
     );
@@ -42,8 +42,8 @@ abstract class AppStyles {
 
   static TextStyle styleSemiBold16(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF064061),
-      fontSize: 16,
+      color: Color(0xFF064061),
+      fontSize: getResponsiveFontSize(fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
     );
@@ -51,8 +51,8 @@ abstract class AppStyles {
 
   static TextStyle styleSemiBold20(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF064061),
-      fontSize: 20,
+      color: Color(0xFF064061),
+      fontSize: getResponsiveFontSize(fontSize: 20),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
     );
@@ -60,8 +60,8 @@ abstract class AppStyles {
 
   static TextStyle styleRegular12(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFAAAAAA),
-      fontSize: 12,
+      color: Color(0xFFAAAAAA),
+      fontSize: getResponsiveFontSize(fontSize: 12),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
     );
@@ -69,8 +69,8 @@ abstract class AppStyles {
 
   static TextStyle styleSemiBold24(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF4EB7F2),
-      fontSize: 24,
+      color: Color(0xFF4EB7F2),
+      fontSize: getResponsiveFontSize(fontSize: 24),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
     );
@@ -78,8 +78,8 @@ abstract class AppStyles {
 
   static TextStyle styleRegular14(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFAAAAAA),
-      fontSize: 14,
+      color: Color(0xFFAAAAAA),
+      fontSize: getResponsiveFontSize(fontSize: 14),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
     );
@@ -87,29 +87,33 @@ abstract class AppStyles {
 
   static TextStyle styleSemiBold18(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
-      fontSize: 18,
+      color: Color(0xFFFFFFFF),
+      fontSize: getResponsiveFontSize(fontSize: 18),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
     );
   }
 }
 
-double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
-  double scaleFactor = getScaleFactor(context);
+double getResponsiveFontSize({required double fontSize}) {
+  double scaleFactor = getScaleFactor();
   double respnsizeFontSize = fontSize * scaleFactor;
   double upperLimit = fontSize * 1.2;
   double lowerLimit = fontSize * .8;
   return respnsizeFontSize.clamp(lowerLimit, upperLimit);
 }
 
-double getScaleFactor(BuildContext context) {
-  double width = MediaQuery.sizeOf(context).width;
-  if (width < 600) {
-    return width / 400;
-  } else if (width < 900) {
-    return width / 700;
-  } else {
+double getScaleFactor() {
+  var dispatcher = PlatformDispatcher.instance;
+  var physicalWidth = dispatcher.views.first.physicalSize.width;
+  var pixelRatio = dispatcher.views.first.devicePixelRatio;
+  var width = physicalWidth / pixelRatio;
+
+  if (width < 800) {
+    return width / 550;
+  } else if (width < 1200) {
     return width / 1000;
+  } else {
+    return width / 1500;
   }
 }
