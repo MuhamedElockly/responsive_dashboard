@@ -1,6 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 
 abstract class AppStyles {
   static TextStyle styleRegular16(context) {
@@ -42,7 +43,7 @@ abstract class AppStyles {
   static TextStyle styleSemiBold16(BuildContext context) {
     return TextStyle(
       color: const Color(0xFF064061),
-      fontSize:16,
+      fontSize: 16,
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
     );
@@ -91,5 +92,24 @@ abstract class AppStyles {
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
     );
+  }
+}
+
+double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
+  double scaleFactor = getScaleFactor(context);
+  double respnsizeFontSize = fontSize * scaleFactor;
+  double upperLimit = fontSize * 1.2;
+  double lowerLimit = fontSize * .8;
+  return respnsizeFontSize.clamp(lowerLimit, upperLimit);
+}
+
+double getScaleFactor(BuildContext context) {
+  double width = MediaQuery.sizeOf(context).width;
+  if (width < 600) {
+    return width / 400;
+  } else if (width < 900) {
+    return width / 700;
+  } else {
+    return width / 1000;
   }
 }
