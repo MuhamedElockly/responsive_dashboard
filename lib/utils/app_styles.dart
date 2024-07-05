@@ -114,6 +114,6 @@ double getScaleFactor() {
   } else if (width < 1200) {
     return width / 1000;
   } else {
-    return width / 1500;
+    return width / 3100;
   }
 }
