@@ -33,7 +33,9 @@ class MyCard extends StatelessWidget {
                 ),
               ),
               subtitle: Text(
-                'Muhamed Elockly',
+                'Muhamed Elockly ',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: AppStyles.styleMedium20(context),
               ),
               trailing: SvgPicture.asset(Assets.imagesGallery),
@@ -57,8 +59,10 @@ class MyCard extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: 26,
+            Flexible(
+              child: SizedBox(
+                height: 26,
+              ),
             ),
           ],
         ),
